@@ -27,6 +27,7 @@ class PokemonRepositoryImpl @Inject constructor(
         return Pager(
             config = PagingConfig(
                 pageSize = 20,
+                maxSize = 100,
                 enablePlaceholders = false
             ),
             pagingSourceFactory = {

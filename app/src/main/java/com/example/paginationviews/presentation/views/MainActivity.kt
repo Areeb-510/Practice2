@@ -12,6 +12,7 @@ import androidx.paging.map
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.paginationviews.R
+import com.example.paginationviews.data.paging.LoaderAdapter
 import com.example.paginationviews.data.paging.PokemonAdapter
 import com.example.paginationviews.presentation.viewmodel.PokemonViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -34,7 +35,10 @@ class MainActivity : AppCompatActivity() {
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = adapter
+        recyclerView.adapter = adapter.withLoadStateHeaderAndFooter(
+            header = LoaderAdapter(),
+            footer = LoaderAdapter()
+        )
         recyclerView.setHasFixedSize(true)
 
         lifecycleScope.launch {

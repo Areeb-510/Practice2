@@ -57,4 +57,6 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3")
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation("androidx.paging:paging-runtime:$3.3.0")
+    implementation("androidx.room:room-runtime:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
 }
